@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+nav {
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 5rem;
+  font-size: 1.2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #252525;
+  font-weight: bold;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.active-nav {
+  height: 3px;
+  background: #335ae0;
+  border-radius: 1rem;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 3rem;
+  margin: 10rem 30rem;
+}
+
+.card {
+  height: 15rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #a68dd4;
+  grid-column: span 3;
+  font-size: 1.2rem;
+  box-shadow: 0.7rem 0.7rem 0rem rgb(39, 39, 39);
+  border: 4px solid rgb(39, 39, 39);
+  gap: 2rem;
+}
+
+.card p {
+  line-height: 2rem;
+  display: none;
+}
+
+.card.active p {
+  display: block;
+}
+
+.card.active {
+  grid-column: 1 / span 6;
+  grid-row: 1;
+  order: 0;
+  height: auto;
+}
+
+.card.is-inactive {
+  grid-column: span 2;
+}
